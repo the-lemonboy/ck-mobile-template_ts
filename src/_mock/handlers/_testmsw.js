@@ -7,12 +7,11 @@ import { ORG_LIST } from '@/_mock/assets';
 // });
 
 // export default [orgList];
-export const handlers = [
-  http.get('/api/msw/test', (resolver) => {
+ const testmsw = http.get('/api/msw/test', (resolver) => {
     return HttpResponse.json({
       status: 0,
       message: '',
       data: ORG_LIST,
     })
-  }),
-]
+  })
+export default [testmsw];

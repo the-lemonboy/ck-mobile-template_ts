@@ -1,4 +1,6 @@
 import { faker } from '@faker-js/faker';
+import { max } from 'lodash-es';
+import { title } from 'process';
 
 
 /**
@@ -30,3 +32,97 @@ export const ORG_LIST = [
     ],
   }
 ];
+
+export const TEST_LIST = [
+  {
+    title:faker.lorem.text({max: 20}),
+    content:faker.lorem.paragraph({max: 10}),
+    img: faker.image.abstract({width: 100, height: 100}),
+    id: faker.string.uuid(),
+    like: faker.number.bigInt({min: 0, max: 1000}),
+  },
+   {
+    title:faker.lorem.text({max: 20}),
+    content:faker.lorem.paragraph({max: 10}),
+    img: faker.image.abstract({width: 100, height: 100}),
+    id: faker.string.uuid(),
+    like: faker.number.bigInt({min: 0, max: 1000}),
+  },
+  {
+    title:faker.lorem.text({max: 20}),
+    content:faker.lorem.paragraph({max: 10}),
+    img: faker.image.abstract({width: 100, height: 100}),
+    id: faker.string.uuid(),
+    like: faker.number.bigInt({min: 0, max: 1000}),
+  },
+  {
+    title:faker.lorem.text({max: 20}),
+    content:faker.lorem.paragraph({max: 10}),
+    img: faker.image.abstract({width: 100, height: 100}),
+    id: faker.string.uuid(),
+    like: faker.number.bigInt({min: 0, max: 1000}),
+  },
+  {
+    title:faker.lorem.text({max: 20}),
+    content:faker.lorem.paragraph({max: 10}),
+    img: faker.image.abstract({width: 100, height: 100}),
+    id: faker.string.uuid(),
+    like: faker.number.bigInt({min: 0, max: 1000}),
+  },
+  {
+    title:faker.lorem.text({max: 20}),
+    content:faker.lorem.paragraph({max: 10}),
+    img: faker.image.abstract({width: 100, height: 100}),
+    id: faker.string.uuid(),
+    like: faker.number.bigInt({min: 0, max: 1000}),
+  },
+  {
+    title:faker.lorem.text({max: 20}),
+    content:faker.lorem.paragraph({max: 10}),
+    img: faker.image.abstract({width: 100, height: 100}),
+    id: faker.string.uuid(),
+    like: faker.number.bigInt({min: 0, max: 1000}),
+  },
+  {
+    title:faker.lorem.text({max: 20}),
+    content:faker.lorem.paragraph({max: 10}),
+    img: faker.image.abstract({width: 100, height: 100}),
+    id: faker.string.uuid(),
+    like: faker.number.bigInt({min: 0, max: 1000}),
+  },
+  {
+    title:faker.lorem.text({max: 20}),
+    content:faker.lorem.paragraph({max: 10}),
+    img: faker.image.abstract({width: 100, height: 100}),
+    id: faker.string.uuid(),
+    like: faker.number.bigInt({min: 0, max: 1000}),
+  },
+  {
+    title:faker.lorem.text({max: 20}),
+    content:faker.lorem.paragraph({max: 10}),
+    img: faker.image.abstract({width: 100, height: 100}),
+    id: faker.string.uuid(),
+    like: faker.number.bigInt({min: 0, max: 1000}),
+  },
+  {
+    title:faker.lorem.text({max: 20}),
+    content:faker.lorem.paragraph({max: 10}),
+    img: faker.image.abstract({width: 100, height: 100}),
+    id: faker.string.uuid(),
+    like: faker.number.bigInt({min: 0, max: 1000}),
+  },
+  {
+    title:faker.lorem.text({max: 20}),
+    content:faker.lorem.paragraph({max: 10}),
+    img: faker.image.abstract({width: 100, height: 100}),
+    id: faker.string.uuid(),
+    like: faker.number.bigInt({min: 0, max: 1000}),
+  },
+  {
+    title:faker.lorem.text({max: 20}),
+    content:faker.lorem.paragraph({max: 10}),
+    img: faker.image.abstract({width: 100, height: 100}),
+    id: faker.string.uuid(),
+    like: faker.number.bigInt({min: 0, max: 1000}),
+  },
+]

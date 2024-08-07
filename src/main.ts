@@ -10,8 +10,8 @@ import { i18n } from '@/utils/i18n'
 
 // Vant 桌面端适配
 import '@vant/touch-emulator'
-import { worker } from './_mock';
-worker.start({ onUnhandledRequest: 'bypass' });
+// import { worker } from './_mock';
+// worker.start({ onUnhandledRequest: 'bypass' });
 import { VueQueryPlugin } from '@tanstack/vue-query'
 
 
