@@ -38,6 +38,10 @@
     "src/components.d.ts",
     "src/auto-imports.d.ts",
     "src/typed-router.d.ts",
-    "tests/*.ts"
+    "tests/*.ts",
+    "src",
+    "**.ts", 
+    "*.json", 
+    "**.*js"
   ]
 }

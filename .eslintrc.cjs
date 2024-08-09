@@ -10,7 +10,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true, // 启用JSX
     },
-    extraFileExtensions: ['.json'],
+    extraFileExtensions: ['.json','.vue'],
   },
   settings: {
     // 识别 @ # alias
@@ -20,7 +20,7 @@ module.exports = {
           ['@', './src'],
           ['#', './types'],
         ],
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json','.vue'],
       },
     },
   },
@@ -28,21 +28,21 @@ module.exports = {
   extends: [
     'airbnb',
     'airbnb-typescript',
-    'airbnb/hooks',
     'plugin:@typescript-eslint/recommended', // 使用@typescript-eslint/eslint-plugin推荐的规则
     'plugin:jsx-a11y/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'prettier', // 增加 prettier 相关的校验规则
     'plugin:prettier/recommended', // 开启 Prettier 插件推荐的规则
+    'plugin:vue/essential',
   ],
   /* ESLint文件所依赖的插件 */
   plugins: [
     '@typescript-eslint',
     'prettier',
-    'react',
-    'react-hooks',
     'jsx-a11y',
+    'vue',
+    'html',
     'import',
     'unused-imports',
   ],
@@ -67,11 +67,11 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 'off',
 
     // 不用手动引入react
-    'react/react-in-jsx-scope': 'off',
-    'react/button-has-type': 'off',
-    'react/require-default-props': 'off',
-    'react/no-array-index-key': 'off',
-    'react/jsx-props-no-spreading': 'off',
+    // 'react/react-in-jsx-scope': 'off',
+    // 'react/button-has-type': 'off',
+    // 'react/require-default-props': 'off',
+    // 'react/no-array-index-key': 'off',
+    // 'react/jsx-props-no-spreading': 'off',
 
     'import/first': 'warn',
     'import/newline-after-import': 'warn',

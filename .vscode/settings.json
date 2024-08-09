@@ -10,7 +10,10 @@
     "css",
     "scss",
     "less",
-    "postcss"
+    "postcss",
+    "vue",
+    "javascript",
+    "html"
   ],
   "npm.packageManager": "pnpm",
   "i18n-ally.localesPaths": [
