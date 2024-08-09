@@ -7,20 +7,22 @@ module.exports = {
     project: './tsconfig.json', // tsconfig.json的路径
     ecmaVersion: 'latest',
     sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true, // 启用JSX
-    },
-    extraFileExtensions: ['.json','.vue'],
+    // ecmaFeatures: {
+    //   jsx: true, // 启用JSX
+    // },
+    extraFileExtensions: ['.json', '.vue'],
   },
   settings: {
     // 识别 @ # alias
     'import/resolver': {
       alias: {
-        map: [
-          ['@', './src'],
-          ['#', './types'],
-        ],
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json','.vue'],
+        map: [['@', './src']],
+        extensions: ['.ts', '.js', '.json', '.vue'],
+      },
+    },
+    settings: {
+      react: {
+        version: '999.999.999',
       },
     },
   },
@@ -29,7 +31,7 @@ module.exports = {
     'airbnb',
     'airbnb-typescript',
     'plugin:@typescript-eslint/recommended', // 使用@typescript-eslint/eslint-plugin推荐的规则
-    'plugin:jsx-a11y/recommended',
+    // 'plugin:jsx-a11y/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'prettier', // 增加 prettier 相关的校验规则
@@ -40,7 +42,7 @@ module.exports = {
   plugins: [
     '@typescript-eslint',
     'prettier',
-    'jsx-a11y',
+    // 'jsx-a11y',
     'vue',
     'html',
     'import',
@@ -61,17 +63,10 @@ module.exports = {
     'space-before-function-paren': 'off',
     'class-methods-use-this': 'off',
 
-    'jsx-a11y/click-events-have-key-events': 'off',
-    'jsx-a11y/interactive-supports-focus': 'off',
-    'jsx-a11y/no-noninteractive-element-interactions': 'off',
-    'jsx-a11y/no-static-element-interactions': 'off',
-
-    // 不用手动引入react
-    // 'react/react-in-jsx-scope': 'off',
-    // 'react/button-has-type': 'off',
-    // 'react/require-default-props': 'off',
-    // 'react/no-array-index-key': 'off',
-    // 'react/jsx-props-no-spreading': 'off',
+    // 'jsx-a11y/click-events-have-key-events': 'off',
+    // 'jsx-a11y/interactive-supports-focus': 'off',
+    // 'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    // 'jsx-a11y/no-static-element-interactions': 'off',
 
     'import/first': 'warn',
     'import/newline-after-import': 'warn',
@@ -96,15 +91,11 @@ module.exports = {
             group: 'internal',
           },
           {
-            pattern: '#/**',
-            group: 'type',
-          },
-          {
             pattern: '*.{scss,css,less,styl,stylus}',
             group: 'parent',
           },
           {
-            pattern: '*.{js,jsx,ts,tsx}',
+            pattern: '*.{js,ts}',
             group: 'sibling',
           },
         ],

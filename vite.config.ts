@@ -1,16 +1,19 @@
-import path from 'node:path'
-import process from 'node:process'
-import { loadEnv } from 'vite'
-import type { ConfigEnv, UserConfig } from 'vite'
-import viewport from 'postcss-mobile-forever'
-import autoprefixer from 'autoprefixer'
-import tailwindcss from  'tailwindcss'
-import { createVitePlugins } from './build/vite'
-import { exclude, include } from './build/vite/optimize'
+import path from 'node:path';
+import process from 'node:process';
+
+import autoprefixer from 'autoprefixer';
+import viewport from 'postcss-mobile-forever';
+import tailwindcss from 'tailwindcss';
+import { loadEnv } from 'vite';
+
+import { createVitePlugins } from './build/vite';
+import { exclude, include } from './build/vite/optimize';
+
+import type { ConfigEnv, UserConfig } from 'vite';
 
 export default ({ mode }: ConfigEnv): UserConfig => {
-  const root = process.cwd()
-  const env = loadEnv(mode, root)
+  const root = process.cwd();
+  const env = loadEnv(mode, root);
 
   return {
     base: env.VITE_APP_PUBLIC_PATH,
@@ -25,7 +28,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         '/api': {
           target: 'http://localhost:3000',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, '')
+          rewrite: (path) => path.replace(/^\/api/, ''),
         },
       },
     },
@@ -46,12 +49,8 @@ export default ({ mode }: ConfigEnv): UserConfig => {
             appSelector: '#app',
             viewportWidth: 375,
             maxDisplayWidth: 600,
-            rootContainingBlockSelectorList: [
-              'van-tabbar',
-              'van-popup',
-            ],
+            rootContainingBlockSelectorList: ['van-tabbar', 'van-popup'],
           }),
-          
         ],
       },
     },
@@ -62,5 +61,5 @@ export default ({ mode }: ConfigEnv): UserConfig => {
     },
 
     optimizeDeps: { include, exclude },
-  }
-}
+  };
+};

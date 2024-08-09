@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "jsx": "preserve",
+    // "jsx": "preserve",
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
     "experimentalDecorators": true,
     "baseUrl": ".",
     "module": "esnext",
     "moduleResolution": "Bundler",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
     },
     "types": [
       "node",
@@ -43,5 +43,6 @@
     "**.ts", 
     "*.json", 
     "**.*js"
-  ]
+  ],
+  "exclude": ["node_modules", "dist"],
 }
