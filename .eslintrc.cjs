@@ -30,6 +30,9 @@ module.exports = {
   extends: [
     'airbnb',
     'airbnb-typescript',
+    'eslint:recommended',
+    'plugin:vue/vue3-recommended',
+    '@vue/typescript/recommended',
     'plugin:@typescript-eslint/recommended', // 使用@typescript-eslint/eslint-plugin推荐的规则
     // 'plugin:jsx-a11y/recommended',
     'plugin:import/errors',

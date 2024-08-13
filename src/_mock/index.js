@@ -1,7 +1,7 @@
 import { setupWorker } from 'msw/browser';
 
-import testmswApi from './handlers/_testmsw';
-import testListApi from './handlers/_testList'
+import { mswmMockApi } from './handlers/_testmsw';
+import { ListMockApi } from './handlers/list';
 
-const handlers = [...testListApi, ...testmswApi];
-export const worker = setupWorker(...handlers);
+// const handlers = [...orgMockApi];
+export const worker = setupWorker(...mswmMockApi, ...ListMockApi);

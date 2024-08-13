@@ -1,18 +1,22 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 
-const useCounterStore = defineStore('counter', () => {
-  const counter = ref(0)
+const useCounterStore = defineStore(
+  'counter',
+  () => {
+    const counter = ref(0);
 
-  const increment = () => {
-    counter.value++
-  }
+    const increment = () => {
+      counter.value += 1;
+    };
 
-  return {
-    counter,
-    increment,
-  }
-}, {
-  persist: true,
-})
+    return {
+      counter,
+      increment,
+    };
+  },
+  {
+    persist: true,
+  },
+);
 
-export default useCounterStore
+export default useCounterStore;

@@ -6,9 +6,10 @@
     "experimentalDecorators": true,
     "baseUrl": ".",
     "module": "esnext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "node",
     "paths": {
       "@/*": ["src/*"],
+      "@iconify/*": ["node_modules/@iconify/*"]
     },
     "types": [
       "node",

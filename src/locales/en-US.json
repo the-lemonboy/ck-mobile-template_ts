@@ -9,7 +9,8 @@
     "unocssExample": "🎨 tailwindcss example",
     "keepAlive": "🧡 KeepAlive Demo",
     "imitateHttp": "🌐 imitateHttp",
-    "unlimitedLists": "Unlimited Lists"
+    "unlimitedLists": "Unlimited Lists",
+    "iconify": "iconify Demo"
   },
   "mock": {
     "fromAsyncData": "Data from asynchronous requests",

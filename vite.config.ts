@@ -25,10 +25,10 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       host: true,
       port: 8080,
       proxy: {
-        '/api': {
+        '/dev': {
           target: 'http://localhost:3000',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, ''),
+          rewrite: (path) => path.replace(/^\/dev/, ''),
         },
       },
     },

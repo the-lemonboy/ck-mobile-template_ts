@@ -46,6 +46,7 @@ const menuItems = computed(() => ([
   { title: t('home.keepAlive'), route: 'keepalive' },
   { title: t('home.imitateHttp'), route: 'imitateHttp' },
   { title: t('home.unlimitedLists'), route: 'unlimitedLists' },
+  { title: t('home.iconify'), route: 'iconify' },
 ]))
 </script>
 

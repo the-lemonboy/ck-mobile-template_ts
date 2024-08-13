@@ -9,7 +9,8 @@
     "unocssExample": "🎨 tailwindcss 示例",
     "keepAlive": "🧡 KeepAlive 演示",
     "imitateHttp": "🌐 仿真 HTTP 请求",
-    "unlimitedLists": "无限列表"
+    "unlimitedLists": "无限列表",
+    "iconify": "iconify 示例"
   },
   "mock": {
     "fromAsyncData": "来自异步请求的数据",
