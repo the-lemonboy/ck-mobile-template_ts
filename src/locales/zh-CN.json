@@ -6,9 +6,8 @@
     "echartsDemo": "📊 Echarts 演示",
     "persistPiniaState": "🍍 持久化 Pinia 状态",
     "404Demo": "🙅 404页 演示",
-    "unocssExample": "🎨 tailwindcss 示例",
+    "tailwindcssExample": "🎨 tailwindcss 示例",
     "keepAlive": "🧡 KeepAlive 演示",
-    "imitateHttp": "🌐 仿真 HTTP 请求",
     "unlimitedLists": "无限列表",
     "iconify": "iconify 示例"
   },

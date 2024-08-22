@@ -1,25 +1,3 @@
-<script setup lang="ts">
-import { queryProse } from '@/api'
-
-definePage({
-  name: 'mock',
-  meta: {
-    level: 2,
-    title: '💿 Mock 指南',
-    i18n: 'home.mockGuide',
-  },
-})
-
-const messages = ref<string>('')
-
-function pull() {
-  queryProse().then(({ code, result }) => {
-    if (code === 0)
-      messages.value = result
-  })
-}
-</script>
-
 <template>
   <Container>
     <div class="data-label">
@@ -43,7 +21,27 @@ function pull() {
     </van-space>
   </Container>
 </template>
+<script setup lang="ts">
+import { GetMockData } from '@/api/service/mockApi';
 
+definePage({
+  name: 'mock',
+  meta: {
+    level: 2,
+    title: '💿 Mock 指南',
+    i18n: 'home.mockGuide',
+  },
+});
+
+const messages = ref<string>('');
+
+function pull() {
+  GetMockData().then((res) => {
+    console.log(res);
+    messages.value = res.data.content;
+  });
+}
+</script>
 <style lang="less" scoped>
 .data-label {
   color: #969799;

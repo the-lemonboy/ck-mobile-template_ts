@@ -23,14 +23,13 @@ declare module 'vue-router/auto-routes' {
     'charts': RouteRecordInfo<'charts', '/charts', Record<never, never>, Record<never, never>>,
     'counter': RouteRecordInfo<'counter', '/counter', Record<never, never>, Record<never, never>>,
     'iconify': RouteRecordInfo<'iconify', '/iconify', Record<never, never>, Record<never, never>>,
-    'imitateHttp': RouteRecordInfo<'imitateHttp', '/imitateHttp', Record<never, never>, Record<never, never>>,
     'KeepAlive': RouteRecordInfo<'KeepAlive', '/keepalive', Record<never, never>, Record<never, never>>,
     'login': RouteRecordInfo<'login', '/login', Record<never, never>, Record<never, never>>,
     '/login/loginIn': RouteRecordInfo<'/login/loginIn', '/login/loginIn', Record<never, never>, Record<never, never>>,
     '/login/loginUp': RouteRecordInfo<'/login/loginUp', '/login/loginUp', Record<never, never>, Record<never, never>>,
     'mock': RouteRecordInfo<'mock', '/mock', Record<never, never>, Record<never, never>>,
     'profile': RouteRecordInfo<'profile', '/profile', Record<never, never>, Record<never, never>>,
+    'unocss': RouteRecordInfo<'unocss', '/tailwindcss', Record<never, never>, Record<never, never>>,
     'unlimitedLists': RouteRecordInfo<'unlimitedLists', '/unlimitedLists', Record<never, never>, Record<never, never>>,
-    'unocss': RouteRecordInfo<'unocss', '/unocss', Record<never, never>, Record<never, never>>,
   }
 }

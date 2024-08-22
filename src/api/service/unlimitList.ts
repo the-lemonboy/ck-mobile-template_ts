@@ -1,11 +1,12 @@
-import request from  "@/utils/request";
-export interface getListReq {
-  limit: number,
-  page: number
+import request from '../request';
+
+export interface GetListReq {
+  limit: number;
+  page: number;
 }
-export async function getList(data:getListReq): Promise<any> {
+export async function getList(data: GetListReq): Promise<any> {
   return request('/api/unlimitList', {
     method: 'POST',
-    data
-  })
+    data,
+  });
 }

@@ -2,14 +2,12 @@ module.exports = {
   root: true, // 表示当前目录即为根目录，ESLint 规则将被限制到该目录下
   env: { browser: true, es2020: true, node: true },
   /* 解析器 */
-  parser: '@typescript-eslint/parser', // 指定ESLint解析器
+  parser: 'vue-eslint-parser', // 使用 vue-eslint-parser 解析 Vue 文件
   parserOptions: {
-    project: './tsconfig.json', // tsconfig.json的路径
+    parser: '@typescript-eslint/parser', // 指定 .ts/.js 文件的解析器
+    project: './tsconfig.json',
     ecmaVersion: 'latest',
     sourceType: 'module',
-    // ecmaFeatures: {
-    //   jsx: true, // 启用JSX
-    // },
     extraFileExtensions: ['.json', '.vue'],
   },
   settings: {
@@ -18,11 +16,6 @@ module.exports = {
       alias: {
         map: [['@', './src']],
         extensions: ['.ts', '.js', '.json', '.vue'],
-      },
-    },
-    settings: {
-      react: {
-        version: '999.999.999',
       },
     },
   },
@@ -65,7 +58,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'space-before-function-paren': 'off',
     'class-methods-use-this': 'off',
-
+    'vue/multi-word-component-names': 'off',
     // 'jsx-a11y/click-events-have-key-events': 'off',
     // 'jsx-a11y/interactive-supports-focus': 'off',
     // 'jsx-a11y/no-noninteractive-element-interactions': 'off',

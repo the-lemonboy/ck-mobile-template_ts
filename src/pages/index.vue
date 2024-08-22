@@ -40,11 +40,10 @@ function onLanguageConfirm(event: { selectedOptions: PickerColumn }) {
 const menuItems = computed(() => ([
   { title: t('home.mockGuide'), route: 'mock' },
   { title: t('home.echartsDemo'), route: 'charts' },
-  { title: t('home.unocssExample'), route: 'unocss' },
+  { title: t('home.tailwindcssExample'), route: 'tailwindcss' },
   { title: t('home.persistPiniaState'), route: 'counter' },
   { title: t('home.404Demo'), route: 'unknown' },
   { title: t('home.keepAlive'), route: 'keepalive' },
-  { title: t('home.imitateHttp'), route: 'imitateHttp' },
   { title: t('home.unlimitedLists'), route: 'unlimitedLists' },
   { title: t('home.iconify'), route: 'iconify' },
 ]))

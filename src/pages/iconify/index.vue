@@ -1,8 +1,13 @@
 <template>
   <container>
     <div class="mb-4">
-      <span class="font-bold text-base">iconify海量资源: </span>
-      <a class="text-blue-400" target="_blank" href="https://icon-sets.iconify.design/?category=General">https://icon-sets.iconify.design/?category=General</a>
+      <span class="text-base font-bold">iconify海量资源: </span>
+      <a
+        class="text-blue-400"
+        target="_blank"
+        href="https://icon-sets.iconify.design/?category=General"
+        >https://icon-sets.iconify.design/?category=General</a
+      >
     </div>
     <div class="grid grid-cols-3 gap-4">
       <div class="flex aspect-square w-full items-center justify-center bg-blue-200">
@@ -38,6 +43,7 @@
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
+
 definePage({
   name: 'iconify',
   meta: {

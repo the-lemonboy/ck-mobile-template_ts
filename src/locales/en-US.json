@@ -6,9 +6,8 @@
     "404Demo": "🙅 Page 404 Demo",
     "echartsDemo": "📊 Echarts Demo",
     "persistPiniaState": "🍍 Persistent Pinia state",
-    "unocssExample": "🎨 tailwindcss example",
+    "tailwindcssExample": "🎨 tailwindcss example",
     "keepAlive": "🧡 KeepAlive Demo",
-    "imitateHttp": "🌐 imitateHttp",
     "unlimitedLists": "Unlimited Lists",
     "iconify": "iconify Demo"
   },
