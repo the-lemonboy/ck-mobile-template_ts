@@ -5,14 +5,18 @@
         v-model:loading="listLoading"
         :finished="finished"
         finished-text="没有更多了"
-        @load="onLoad"
+        @load="fetchNextPage"
       >
-        <div v-for="(item, index) in listData" :key="index" :title="item" class="w-full rounded mt-5">
+        <div
+          v-for="(item, index) in listData"
+          :key="index"
+          :title="item"
+          class="mt-5 w-full rounded"
+        >
           <div class="flex">
-            <div class="w-28 h-28 bg-blue-200 flex justify-center	items-center">{{ item.img }}</div>
-          <div>{{ item.title }}</div>
+            <div class="flex h-28 w-28 items-center justify-center bg-blue-200">{{ item.img }}</div>
+            <div>{{ item.title }}</div>
           </div>
-          
         </div>
       </van-list>
     </van-pull-refresh>
@@ -20,7 +24,7 @@
 </template>
 <script setup lang="ts">
 import { getList } from '@/api/service/unlimitList';
-import { useInfiniteQuery, useQuery } from '@tanstack/vue-query';
+import { useInfiniteQuery, InfiniteQueryPageParam } from 'react-query';
 definePage({
   name: 'unlimitedLists',
   meta: {
@@ -29,6 +33,16 @@ definePage({
     i18n: 'home.unlimitedLists',
   },
 });
+type ListItem = {
+  id: number;
+  name: string;
+  // 其他字段...
+};
+
+type QueryResponse = {
+  data: ListItem[];
+  // 其他响应字段...
+};
 const finished = ref(false);
 const refreshing = ref(false);
 const query = reactive({
@@ -36,28 +50,33 @@ const query = reactive({
   limit: 10,
 });
 
-const onLoad = () => {
-  // if()
-  query.page += 1;
-  console.log(listData,"2323");
-};
+// const fetchNextPage = () => {
+//   // if()
+//   const data = getList(query);
+//   return data
+// };
 // const { data: listData, isLoading:listLoading } = useQuery({
 //   queryKey: ['unlimitedLists'],
 //   queryFn: async () => {
 //     const res = await getList(query);
 //     return res;
 //   },
-  
+
 // });
-const { data, fetchNextPage, hasNextPage, isFetchingNextPage,status} = useInfiniteQuery({
+const { data, fetchNextPage, hasNextPage } = useInfiniteQuery({
   queryKey: ['unlimitedLists'],
-  queryFn: async (query) => getList(query),
-  getNextPageParam: (lastPage,pages) => {
-    if(lastPage.length < query.limit) {
-      return false
+  queryFn: async ({ pageParam = 1 }) => {
+    const res = await getList({ ...query, page: pageParam });
+    return res;
+  },
+  getNextPageParam: (lastPage:any, allPages:any) => {
+    // lastPage 和 allPages 的类型已经推断为 QueryResponse 和 QueryResponse[]
+    if (lastPage.data.length < query.limit) {
+      return false;
     }
-  }
-})
+    return allPages.length + 1;
+  },
+});
 const onRefresh = () => {
   // 清空列表数据
   finished.value = false;
