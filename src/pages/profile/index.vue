@@ -4,9 +4,9 @@ definePage({
   meta: {
     level: 1,
   },
-})
+});
 
-const { t } = useI18n()
+const { t } = useI18n();
 </script>
 
 <template>

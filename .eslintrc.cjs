@@ -21,13 +21,11 @@ module.exports = {
   },
   /* ESLint 中基础配置需要继承的配置 */
   extends: [
-    'airbnb',
-    'airbnb-typescript',
+    'airbnb-base',
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
     '@vue/typescript/recommended',
     'plugin:@typescript-eslint/recommended', // 使用@typescript-eslint/eslint-plugin推荐的规则
-    // 'plugin:jsx-a11y/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'prettier', // 增加 prettier 相关的校验规则
@@ -59,16 +57,14 @@ module.exports = {
     'space-before-function-paren': 'off',
     'class-methods-use-this': 'off',
     'vue/multi-word-component-names': 'off',
-    // 'jsx-a11y/click-events-have-key-events': 'off',
-    // 'jsx-a11y/interactive-supports-focus': 'off',
-    // 'jsx-a11y/no-noninteractive-element-interactions': 'off',
-    // 'jsx-a11y/no-static-element-interactions': 'off',
-
     'import/first': 'warn',
     'import/newline-after-import': 'warn',
     'import/no-duplicates': 'warn',
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
+    'unused-imports/no-unused-imports-ts': 'off',
+    'import/namespace': 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'import/order': [
       'warn',
       {
@@ -101,8 +97,6 @@ module.exports = {
         alphabetize: { order: 'asc', caseInsensitive: true }, // 对于每个组，按字母表顺序排序。
       },
     ],
-
-    'unused-imports/no-unused-imports-ts': 'warn',
     'unused-imports/no-unused-vars-ts': [
       'warn',
       { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },

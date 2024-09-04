@@ -1,32 +1,20 @@
 <template>
-  <van-form @submit="onSubmit">
-  <van-cell-group inset>
-    <van-field
-    class="border-none"
-      v-model="username"
-      name="用户名"
-      label="用户名"
-      placeholder="用户名"
-      :rules="[{ required: true, message: '请填写用户名' }]"
-    />
-    <van-field
-      v-model="password"
-      type="password"
-      name="密码"
-      label="密码"
-      placeholder="密码"
-      :rules="[{ required: true, message: '请填写密码' }]"
-    />
-  </van-cell-group>
-  <div style="margin: 16px;">
-    <van-button round block type="primary" native-type="submit">
-      提交
-    </van-button>
-  </div>
-</van-form>
+  <Container class="h-screen">
+    <div>这是logo</div>
+    <div class="flex w-full flex-col justify-center">
+      <input placeholder="用户名" class="w-9/10 mb-4 h-16 p-4" />
+      <input placeholder="密码" class="w-9/10 h-16 p-4" />
+    </div>
+  </Container>
 </template>
 <script setup lang="ts">
-  
+definePage({
+  name: 'unocss',
+  meta: {
+    level: 2,
+    title: '🎨  tailwindcss示例',
+    i18n: 'home.tailwindcssExample',
+  },
+});
 </script>
-<style scoped>
-</style>
+<style scoped></style>
