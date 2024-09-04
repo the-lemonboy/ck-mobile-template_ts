@@ -1,20 +1,22 @@
-import { dirname, resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
-import { unheadVueComposablesImports } from '@unhead/vue'
-import legacy from '@vitejs/plugin-legacy'
-import vue from '@vitejs/plugin-vue'
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite';
+import { unheadVueComposablesImports } from '@unhead/vue';
+import legacy from '@vitejs/plugin-legacy';
+import vue from '@vitejs/plugin-vue';
 // import UnoCSS from 'unocss/vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import { VantResolver } from 'unplugin-vue-components/resolvers'
-import Components from 'unplugin-vue-components/vite'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
-import VueRouter from 'unplugin-vue-router/vite'
+import AutoImport from 'unplugin-auto-import/vite';
+import { VantResolver } from 'unplugin-vue-components/resolvers';
+import Components from 'unplugin-vue-components/vite';
+import { VueRouterAutoImports } from 'unplugin-vue-router';
+import VueRouter from 'unplugin-vue-router/vite';
 // import mockDevServerPlugin from 'vite-plugin-mock-dev-server'
-import { VitePWA } from 'vite-plugin-pwa'
-import Sitemap from 'vite-plugin-sitemap'
-import VueDevTools from 'vite-plugin-vue-devtools'
-import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
-import { createViteVConsole } from './vconsole'
+import { VitePWA } from 'vite-plugin-pwa';
+import Sitemap from 'vite-plugin-sitemap';
+import VueDevTools from 'vite-plugin-vue-devtools';
+
+import { createViteVConsole } from './vconsole';
 
 export function createVitePlugins() {
   return [
@@ -43,11 +45,7 @@ export function createVitePlugins() {
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      include: [
-        /\.[tj]sx?$/,
-        /\.vue$/,
-        /\.vue\?vue/,
-      ],
+      include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/],
       imports: [
         'vue',
         'vitest',
@@ -61,9 +59,7 @@ export function createVitePlugins() {
         unheadVueComposablesImports,
       ],
       dts: 'src/auto-imports.d.ts',
-      dirs: [
-        'src/composables',
-      ],
+      dirs: ['src/composables'],
     }),
 
     // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
@@ -114,5 +110,5 @@ export function createVitePlugins() {
         ],
       },
     }),
-  ]
+  ];
 }

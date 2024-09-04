@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
-import useAppStore from '@/stores/modules/app'
-import useRouteCache from '@/stores/modules/routeCache'
-import useRouteTransitionNameStore from '@/stores/modules/routeTransitionName'
-import useAutoThemeSwitcher from '@/hooks/useAutoThemeSwitcher'
+import { storeToRefs } from 'pinia';
+
+import useAutoThemeSwitcher from '@/hooks/useAutoThemeSwitcher';
+import useAppStore from '@/stores/modules/app';
+import useRouteCache from '@/stores/modules/routeCache';
+import useRouteTransitionNameStore from '@/stores/modules/routeTransitionName';
 
 useHead({
   title: 'Vue3 Vant Mobile',
@@ -14,32 +15,32 @@ useHead({
     },
     {
       name: 'theme-color',
-      content: () => isDark.value ? '#00aba9' : '#ffffff',
+      content: () => (isDark.value ? '#00aba9' : '#ffffff'),
     },
   ],
   link: [
     {
       rel: 'icon',
       type: 'image/svg+xml',
-      href: () => preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg',
+      href: () => (preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg'),
     },
   ],
-})
+});
 
-const appStore = useAppStore()
-const { mode } = storeToRefs(appStore)
+const appStore = useAppStore();
+const { mode } = storeToRefs(appStore);
 
-const routeTransitionNameStore = useRouteTransitionNameStore()
-const { routeTransitionName } = storeToRefs(routeTransitionNameStore)
-const { initializeThemeSwitcher } = useAutoThemeSwitcher(appStore)
+const routeTransitionNameStore = useRouteTransitionNameStore();
+const { routeTransitionName } = storeToRefs(routeTransitionNameStore);
+const { initializeThemeSwitcher } = useAutoThemeSwitcher(appStore);
 
 const keepAliveRouteNames = computed(() => {
-  return useRouteCache().routeCaches as string[]
-})
+  return useRouteCache().routeCaches as string[];
+});
 
 onMounted(() => {
-  initializeThemeSwitcher()
-})
+  initializeThemeSwitcher();
+});
 </script>
 
 <template>

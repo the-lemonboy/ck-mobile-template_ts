@@ -42,7 +42,7 @@ function pull() {
   });
 }
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .data-label {
   color: #969799;
   font-weight: 400;

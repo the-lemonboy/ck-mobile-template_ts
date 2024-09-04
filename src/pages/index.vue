@@ -50,7 +50,7 @@ const menuItems = computed(() => ([
 </script>
 
 <template>
-  <Container class="mt-5">
+  <Container>
     <VanCellGroup inset>
       <VanCell center :title="t('home.darkMode')">
         <template #right-icon>

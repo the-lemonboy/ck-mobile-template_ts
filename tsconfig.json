@@ -11,12 +11,12 @@
       "@/*": ["src/*"],
       "@iconify/*": ["node_modules/@iconify/*"]
     },
-    "types": [
-      "node",
-      "unplugin-vue-router/client",
-      "vite-plugin-pwa/client",
-      "@intlify/unplugin-vue-i18n/messages"
-    ],
+    // "types": [
+    //   "node",
+    //   "unplugin-vue-router/client",
+    //   "vite-plugin-pwa/client",
+    //   "@intlify/unplugin-vue-i18n/messages"
+    // ],
     "allowJs": true,
     "strictNullChecks": false,
     "noImplicitAny": false,

@@ -24,7 +24,7 @@
 </template>
 <script setup lang="ts">
 import { getList } from '@/api/service/unlimitList';
-import { useInfiniteQuery, InfiniteQueryPageParam } from 'react-query';
+// import { useInfiniteQuery, InfiniteQueryPageParam } from 'react-query';
 definePage({
   name: 'unlimitedLists',
   meta: {
