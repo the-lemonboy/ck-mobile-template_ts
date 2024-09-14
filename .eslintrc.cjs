@@ -18,6 +18,7 @@ module.exports = {
         extensions: ['.ts', '.js', '.json', '.vue'],
       },
     },
+    'import/core-modules': ['vue-router/auto-routes'],
   },
   /* ESLint 中基础配置需要继承的配置 */
   extends: [
@@ -64,6 +65,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'unused-imports/no-unused-imports-ts': 'off',
     'import/namespace': 'off',
+    'import/extensions': 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'import/order': [
       'warn',

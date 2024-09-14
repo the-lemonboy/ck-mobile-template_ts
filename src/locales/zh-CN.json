@@ -11,6 +11,9 @@
     "unlimitedLists": "无限列表",
     "iconify": "iconify 示例"
   },
+  "login":{
+    "title": "登录"
+  },
   "mock": {
     "fromAsyncData": "来自异步请求的数据",
     "pull": "请求",

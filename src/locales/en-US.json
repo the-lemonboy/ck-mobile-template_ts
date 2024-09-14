@@ -11,6 +11,9 @@
     "unlimitedLists": "Unlimited Lists",
     "iconify": "iconify Demo"
   },
+  "login":{
+    "title": "login"
+  },
   "mock": {
     "fromAsyncData": "Data from asynchronous requests",
     "noData": "No data",

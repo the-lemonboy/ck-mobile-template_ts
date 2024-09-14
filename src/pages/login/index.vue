@@ -1,7 +1,7 @@
 <template>
-  <container>
+  <Container>
     <login-in />
-  </container>
+  </Container>
 </template>
 <script setup lang="ts">
 import loginIn from './loginIn.vue';
@@ -9,7 +9,9 @@ import loginIn from './loginIn.vue';
 definePage({
   name: 'login',
   meta: {
-    level: 0,
+    level: 2,
+    title: '登录',
+    i18n: 'login.title',
   },
 });
 </script>

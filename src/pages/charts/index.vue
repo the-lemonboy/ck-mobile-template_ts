@@ -6,15 +6,22 @@ definePage({
     title: '📊 Echarts 演示',
     i18n: 'home.echartsDemo',
   },
-})
+});
 
-const { t } = useI18n()
+const { t } = useI18n();
 
 const barOption = {
   title: {},
   tooltip: {},
   xAxis: {
-    data: [t('charts.January'), t('charts.February'), t('charts.March'), t('charts.April'), t('charts.May'), t('charts.June')],
+    data: [
+      t('charts.January'),
+      t('charts.February'),
+      t('charts.March'),
+      t('charts.April'),
+      t('charts.May'),
+      t('charts.June'),
+    ],
   },
   yAxis: {},
   series: [
@@ -24,7 +31,7 @@ const barOption = {
       data: [5, 20, 36, 10, 10, 20],
     },
   ],
-}
+};
 
 const lineOption = {
   xAxis: {
@@ -40,7 +47,7 @@ const lineOption = {
       type: 'line',
     },
   ],
-}
+};
 
 const scoreOption = {
   tooltip: {
@@ -61,11 +68,11 @@ const scoreOption = {
       ],
     },
   ],
-}
+};
 
-const refBarOption = ref(barOption)
-const refLineOption = ref(lineOption)
-const refScoreOption = ref(scoreOption)
+const refBarOption = ref(barOption);
+const refLineOption = ref(lineOption);
+const refScoreOption = ref(scoreOption);
 </script>
 
 <template>

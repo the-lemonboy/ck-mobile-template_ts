@@ -1,22 +1,19 @@
 <script setup lang="ts">
-const route = useRoute()
-const router = useRouter()
+const route = useRoute();
+const router = useRouter();
 
 function onBack() {
-  if (window.history.state.back)
-    history.back()
-  else
-    router.replace('/')
+  if (window.history.state.back) window.history.back();
+  else router.replace('/');
 }
 
-const { t } = useI18n()
+const { t } = useI18n();
 
 const title = computed(() => {
-  if (!route.meta)
-    return ''
+  if (!route.meta) return '';
 
-  return route.meta.i18n ? t(route.meta.i18n) : (route.meta.title || '')
-})
+  return route.meta.i18n ? t(route.meta.i18n) : route.meta.title || '';
+});
 </script>
 
 <template>
@@ -24,7 +21,8 @@ const title = computed(() => {
     v-show="title"
     :title="title"
     :fixed="true"
-    clickable left-arrow
+    clickable
+    left-arrow
     @click-left="onBack"
   />
 </template>

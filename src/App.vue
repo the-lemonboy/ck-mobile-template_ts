@@ -1,3 +1,17 @@
+<template>
+  <VanConfigProvider :theme="mode">
+    <NavBar />
+    <router-view v-slot="{ Component, route }">
+      <transition :name="routeTransitionName">
+        <keep-alive :include="keepAliveRouteNames">
+          <component :is="Component" :key="route.name" />
+        </keep-alive>
+      </transition>
+    </router-view>
+    <TabBar />
+  </VanConfigProvider>
+</template>
+
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
 
@@ -42,17 +56,3 @@ onMounted(() => {
   initializeThemeSwitcher();
 });
 </script>
-
-<template>
-  <VanConfigProvider :theme="mode">
-    <NavBar />
-    <router-view v-slot="{ Component, route }">
-      <transition :name="routeTransitionName">
-        <keep-alive :include="keepAliveRouteNames">
-          <component :is="Component" :key="route.name" />
-        </keep-alive>
-      </transition>
-    </router-view>
-    <TabBar />
-  </VanConfigProvider>
-</template>
