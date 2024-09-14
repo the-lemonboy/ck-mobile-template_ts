@@ -63,7 +63,7 @@ const menuItems = computed(() => [
           />
         </template>
       </VanCell>
-
+      <span></span>
       <VanCell
         is-link
         :title="t('home.language')"
