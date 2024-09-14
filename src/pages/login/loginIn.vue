@@ -5,8 +5,10 @@
     </div>
     <div class="flex w-full flex-col justify-center">
       <div class="mb-4 flex h-12 w-full">
-        <span class="flex h-full w-[12%] items-center justify-center rounded bg-white">
-          <Icon icon="solar:user-broken" class="h-6 w-6 text-[#333333]" />
+        <span
+          class="flex h-full w-[12%] items-center justify-center rounded bg-white dark:bg-[#121212]"
+        >
+          <Icon icon="solar:user-broken" class="h-6 w-6 text-[#333333] dark:text-slate-50" />
         </span>
         <input
           v-model="username"
@@ -15,8 +17,10 @@
         />
       </div>
       <div class="mb-4 flex h-12 w-full">
-        <span class="flex h-full w-[12%] items-center justify-center rounded bg-white">
-          <Icon icon="mdi:password-outline" class="h-6 w-6 text-[#333333]" />
+        <span
+          class="flex h-full w-[12%] items-center justify-center rounded bg-white dark:bg-[#121212]"
+        >
+          <Icon icon="mdi:password-outline" class="h-6 w-6 text-[#333333] dark:text-slate-50" />
         </span>
         <span class="flex h-full w-[88%]">
           <input
@@ -26,13 +30,17 @@
             class="box-border h-full w-full rounded border border-none border-gray-300 p-2 pl-0"
           />
 
-          <span class="flex items-center bg-white" @click="onHandlerShowPassword">
+          <span class="flex items-center bg-white dark:bg-[#121212]" @click="onHandlerShowPassword">
             <Icon
               v-if="showPassword"
               icon="fluent:eye-32-regular"
-              class="mr-2 h-6 w-6 text-[#333333]"
+              class="mr-2 h-6 w-6 text-[#333333] dark:text-slate-50"
             />
-            <Icon v-else icon="ph:eye-closed-light" class="mr-2 h-6 w-6 text-[#333333]" />
+            <Icon
+              v-else
+              icon="ph:eye-closed-light"
+              class="mr-2 h-6 w-6 text-[#333333] dark:text-slate-50"
+            />
           </span>
         </span>
       </div>
@@ -48,7 +56,7 @@
         :class="validateLogin ? 'opacity-100' : 'opacity-50'"
         :disabled="!validateLogin"
         @click="onHandlerLogin"
-        >{{ $t('login.title') }}</button
+        >{{ t('login.title') }}</button
       >
       <p class="mt-4 text-center text-gray-400">还有没有账号？/注册</p>
     </div>
@@ -79,6 +87,7 @@ definePage({
     i18n: 'home.tailwindcssExample',
   },
 });
+const { t } = useI18n();
 const remenberPasswordValue = ref(false);
 const ruleValue = ref(false);
 const showPassword = ref(false);
