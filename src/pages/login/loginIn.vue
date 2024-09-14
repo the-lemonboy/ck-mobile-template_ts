@@ -9,6 +9,7 @@
           <Icon icon="solar:user-broken" class="h-6 w-6 text-[#333333]" />
         </span>
         <input
+          v-model="username"
           placeholder="用户名"
           class="box-border h-full w-[88%] rounded border border-none border-gray-300 p-2 pl-0"
         />
@@ -19,7 +20,7 @@
         </span>
         <span class="flex h-full w-[88%]">
           <input
-            ref="passwordInputRef"
+            v-model="password"
             placeholder="密码"
             type="password"
             class="box-border h-full w-full rounded border border-none border-gray-300 p-2 pl-0"
@@ -42,8 +43,14 @@
       <div class="mt-10">
         <van-checkbox v-model="ruleValue">我已阅读并同意</van-checkbox>
       </div>
-      <button class="mt-4 h-12 rounded bg-yellow-400 text-white">{{ $t('login.title') }}</button>
-      <p class="mt-4 text-center text-gray-400">使用其他方式登录</p>
+      <button
+        class="mt-4 h-12 rounded bg-yellow-400 text-white"
+        :class="validateLogin ? 'opacity-100' : 'opacity-50'"
+        :disabled="!validateLogin"
+        @click="onHandlerLogin"
+        >{{ $t('login.title') }}</button
+      >
+      <p class="mt-4 text-center text-gray-400">还有没有账号？/注册</p>
     </div>
     <div class="absolute bottom-1 left-1/2 -translate-x-1/2">
       <p class="text-center text-gray-400">其他登录方式</p>
@@ -76,11 +83,24 @@ const remenberPasswordValue = ref(false);
 const ruleValue = ref(false);
 const showPassword = ref(false);
 const passwordInputRef = ref(null);
+const username = ref('');
+const password = ref('');
+const validateLogin = ref(false);
 function onHandlerShowPassword() {
   showPassword.value = !showPassword.value;
   if (passwordInputRef.value) {
     passwordInputRef.value.type = showPassword.value ? 'text' : 'password';
   }
+}
+watch([username, password], () => {
+  if (username.value && password.value) {
+    validateLogin.value = true;
+  } else {
+    validateLogin.value = false;
+  }
+});
+function onHandlerLogin() {
+  console.log('login');
 }
 </script>
 <style scoped></style>
