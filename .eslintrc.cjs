@@ -52,6 +52,7 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'no-unused-vars': 'off',
+    'no-var': 'warn',
     'no-case-declarations': 'off',
     'no-use-before-define': 'off',
     'no-param-reassign': 'off',
@@ -66,7 +67,8 @@ module.exports = {
     'unused-imports/no-unused-imports-ts': 'off',
     'import/namespace': 'off',
     'import/extensions': 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': 'error',
+    // 'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'import/order': [
       'warn',
       {

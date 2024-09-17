@@ -24,12 +24,12 @@
         </span>
         <span class="flex h-full w-[88%]">
           <input
+            ref="passwordInputRef"
             v-model="password"
             placeholder="密码"
             type="password"
             class="box-border h-full w-full rounded border border-none border-gray-300 p-2 pl-0"
           />
-
           <span class="flex items-center bg-white dark:bg-[#121212]" @click="onHandlerShowPassword">
             <Icon
               v-if="showPassword"
