@@ -6,19 +6,19 @@
     <div class="flex w-full flex-col justify-center">
       <div class="mb-4 flex h-12 w-full">
         <span
-          class="flex h-full w-[12%] items-center justify-center rounded bg-white dark:bg-[#121212]"
+          class="flex h-full w-[12%] items-center justify-center rounded-l bg-white dark:bg-[#121212]"
         >
           <Icon icon="solar:user-broken" class="h-6 w-6 text-[#333333] dark:text-slate-50" />
         </span>
         <input
           v-model="username"
           placeholder="用户名"
-          class="box-border h-full w-[88%] rounded border border-none border-gray-300 p-2 pl-0"
+          class="box-border h-full w-[88%] rounded-r border border-none border-gray-300 p-2 pl-0"
         />
       </div>
       <div class="mb-4 flex h-12 w-full">
         <span
-          class="flex h-full w-[12%] items-center justify-center rounded bg-white dark:bg-[#121212]"
+          class="flex h-full w-[12%] items-center justify-center rounded-l bg-white dark:bg-[#121212]"
         >
           <Icon icon="mdi:password-outline" class="h-6 w-6 text-[#333333] dark:text-slate-50" />
         </span>
@@ -28,7 +28,7 @@
             v-model="password"
             placeholder="密码"
             type="password"
-            class="box-border h-full w-full rounded border border-none border-gray-300 p-2 pl-0"
+            class="box-border h-full w-full rounded-r border border-none border-gray-300 p-2 pl-0"
           />
           <span class="flex items-center bg-white dark:bg-[#121212]" @click="onHandlerShowPassword">
             <Icon
@@ -88,14 +88,14 @@ definePage({
   },
 });
 const { t } = useI18n();
-const remenberPasswordValue = ref(false);
-const ruleValue = ref(false);
-const showPassword = ref(false);
-const passwordInputRef = ref(null);
-const username = ref('');
-const password = ref('');
-const validateLogin = ref(false);
-function onHandlerShowPassword() {
+const remenberPasswordValue = ref<boolean>(false);
+const ruleValue = ref<boolean>(false);
+const showPassword = ref<boolean>(false);
+const passwordInputRef = ref<HTMLInputElement>(null);
+const username = ref<string>('');
+const password = ref<string>('');
+const validateLogin = ref<boolean>(false);
+function onHandlerShowPassword(): void {
   showPassword.value = !showPassword.value;
   if (passwordInputRef.value) {
     passwordInputRef.value.type = showPassword.value ? 'text' : 'password';
