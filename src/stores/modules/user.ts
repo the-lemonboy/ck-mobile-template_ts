@@ -1,14 +1,14 @@
-import { defineStore } from 'pinia';
+// import { defineStore } from 'pinia';
 
-const useLogin = defineStore('login', {
-  state: () => {
-    return {
-      token: '',
-    };
-  },
-  actions: {
-    setToken(token: string) {
-      this.token = token;
-    },
-  },
-});
+// const useLogin = defineStore('login', {
+//   state: () => {
+//     return {
+//       token: '',
+//     };
+//   },
+//   actions: {
+//     setToken(token: string) {
+//       this.token = token;
+//     },
+//   },
+// });

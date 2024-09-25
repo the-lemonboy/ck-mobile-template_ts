@@ -1,22 +1,22 @@
 <template>
   <Container>
     <div class="data-label">
-      {{ $t('mock.fromAsyncData') }}
+      {{ t('mock.fromAsyncData') }}
     </div>
 
     <div class="data-content bg-white dark:bg-[--van-background-2]">
       <div v-if="messages">
         {{ messages }}
       </div>
-      <VanEmpty v-else :description="$t('mock.noData')" />
+      <VanEmpty v-else :description="t('mock.noData')" />
     </div>
 
     <van-space class="m-10" direction="vertical" fill>
       <VanButton type="primary" round block @click="pull">
-        {{ $t('mock.pull') }}
+        {{ t('mock.pull') }}
       </VanButton>
       <VanButton type="default" round block @click="messages = ''">
-        {{ $t('mock.reset') }}
+        {{ t('mock.reset') }}
       </VanButton>
     </van-space>
   </Container>
@@ -34,7 +34,7 @@ definePage({
 });
 
 const messages = ref<string>('');
-
+const { t } = useI18n();
 function pull() {
   GetMockData().then((res) => {
     console.log(res);

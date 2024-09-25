@@ -13,13 +13,13 @@ definePage({
   },
 });
 const value = ref(1);
+const { t } = useI18n();
 </script>
 
 <template>
   <Container>
     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-      <p>{{ $t('keepAlive.label') }}</p>
-      <p>test</p>
+      <p>{{ t('keepAlive.label') }}</p>
       <van-stepper v-model="value" />
     </div>
   </Container>

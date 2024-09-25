@@ -172,6 +172,9 @@ devDependencies:
   postcss-nesting:
     specifier: ^11.3.0
     version: 11.3.0(postcss@8.4.44)
+  postcss-px-to-viewport:
+    specifier: ^1.1.1
+    version: 1.1.1
   prettier:
     specifier: ^3.3.3
     version: 3.3.3
@@ -8451,6 +8454,13 @@ packages:
       '@csstools/selector-specificity': 2.2.0(postcss-selector-parser@6.1.2)
       postcss: 8.4.44
       postcss-selector-parser: 6.1.2
+    dev: true
+
+  /postcss-px-to-viewport@1.1.1:
+    resolution: {integrity: sha512-2x9oGnBms+e0cYtBJOZdlwrFg/mLR4P1g2IFu7jYKvnqnH/HLhoKyareW2Q/x4sg0BgklHlP1qeWo2oCyPm8FQ==}
+    dependencies:
+      object-assign: 4.1.1
+      postcss: 8.4.44
     dev: true
 
   /postcss-reporter@6.0.1:

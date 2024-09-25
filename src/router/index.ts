@@ -1,7 +1,8 @@
 import NProgress from 'nprogress';
 import { createRouter, createWebHistory } from 'vue-router/auto';
 import 'nprogress/nprogress.css';
-import { routes } from 'vue-router/auto-routes'
+import { routes } from 'vue-router/auto-routes';
+
 import useRouteCacheStore from '@/stores/modules/routeCache';
 import useRouteTransitionNameStore from '@/stores/modules/routeTransitionName';
 

@@ -9,8 +9,8 @@ defineProps({
 
 <template>
   <main
-    class="absolute left-0 box-border w-full overflow-y-auto"
-    :style="`padding-left: ${paddingX}px; padding-right: ${paddingX}px; height: calc(100% - 4rem); padding-top: 4rem;`"
+    class="absolute left-0 box-border h-full w-full overflow-y-auto"
+    :style="`padding-left: ${paddingX}px; padding-right: ${paddingX}px; padding-top: 4rem;`"
   >
     <slot />
   </main>

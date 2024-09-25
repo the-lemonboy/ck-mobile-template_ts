@@ -72,12 +72,12 @@ function requestHandler(
   if (config.method === 'get') {
     config.params = config.data;
   }
-  const timestamp = Date.parse(new Date()) / 1000;
-  if (config.url.indexOf('?') > -1) {
-    config.url += `&n=${timestamp}`;
-  } else {
-    config.url += `?n=${timestamp}`;
-  }
+  // const timestamp = Date.parse(new Date()) / 1000;
+  // if (config.url.indexOf('?') > -1) {
+  //   config.url += `&n=${timestamp}`;
+  // } else {
+  //   config.url += `?n=${timestamp}`;
+  // }
   return config;
 }
 

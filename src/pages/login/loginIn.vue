@@ -1,5 +1,6 @@
 <template>
-  <Container>
+  <!-- <Container> -->
+  <div>
     <div class="mb-10 flex w-full justify-center">
       <Icon icon="fa6-solid:lemon" class="h-20 w-20 text-yellow-400" />
     </div>
@@ -46,7 +47,7 @@
       </div>
       <div class="flex justify-between">
         <van-checkbox v-model="remenberPasswordValue">记住密码</van-checkbox>
-        <span class="text-blue-400">忘记密码?</span>
+        <span class="text-base text-blue-400">忘记密码?</span>
       </div>
       <div class="mt-10">
         <van-checkbox v-model="ruleValue">我已阅读并同意</van-checkbox>
@@ -58,9 +59,9 @@
         @click="onHandlerLogin"
         >{{ t('login.title') }}</button
       >
-      <p class="mt-4 text-center text-gray-400">还有没有账号？/注册</p>
+      <p class="mt-4 text-center text-xs text-gray-400">还有没有账号？/注册</p>
     </div>
-    <div class="absolute bottom-1 left-1/2 -translate-x-1/2">
+    <div class="absolute bottom-[5%] left-1/2 -translate-x-1/2">
       <p class="text-center text-gray-400">其他登录方式</p>
       <div class="mt-2 flex w-full justify-center">
         <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[#00C824]">
@@ -74,7 +75,8 @@
         </div>
       </div>
     </div>
-  </Container>
+  </div>
+  <!-- </Container> -->
 </template>
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
