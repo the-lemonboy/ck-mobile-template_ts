@@ -75,7 +75,7 @@
     "eslint-ts-patch": "9.4.0-0",
     "husky": "^9.1.4",
     "lint-staged": "^15.2.8",
-    "msw": "^2.4.1",
+    "msw": "^2.4.9",
     "postcss": "^8.4.41",
     "postcss-import": "^15.1.0",
     "postcss-mobile-forever": "^4.1.5",

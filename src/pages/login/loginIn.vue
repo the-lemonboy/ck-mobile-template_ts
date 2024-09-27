@@ -12,6 +12,7 @@
           <Icon icon="solar:user-broken" class="h-6 w-6 text-[#333333] dark:text-slate-50" />
         </span>
         <input
+          ref="usernameInputRef"
           v-model="username"
           placeholder="用户名"
           class="box-border h-full w-[88%] rounded-r border border-none border-gray-300 p-2 pl-0"
@@ -81,37 +82,64 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
 
+import { useLoginStore } from '@/stores/modules/user';
+import Validator from '@/utils/loginValidator';
+
 definePage({
   name: 'unocss',
   meta: {
     level: 2,
-    title: '🎨  tailwindcss示例',
+    title: '🎨 tailwindcss示例',
     i18n: 'home.tailwindcssExample',
   },
 });
+
 const { t } = useI18n();
-const remenberPasswordValue = ref<boolean>(false);
-const ruleValue = ref<boolean>(false);
-const showPassword = ref<boolean>(false);
-const passwordInputRef = ref<HTMLInputElement>(null);
-const username = ref<string>('');
-const password = ref<string>('');
-const validateLogin = ref<boolean>(false);
-function onHandlerShowPassword(): void {
-  showPassword.value = !showPassword.value;
+// const rememberPasswordValue = ref(false);
+const ruleValue = ref(false);
+const showPassword = ref(false);
+const passwordInputRef = ref<HTMLInputElement | null>(null);
+const usernameInputRef = ref<HTMLInputElement | null>(null);
+const username = ref('');
+const password = ref('');
+const validateLogin = computed(() => !!(username.value && password.value));
+
+// function togglePasswordVisibility(): void {
+//   showPassword.value = !showPassword.value;
+//   if (passwordInputRef.value) {
+//     passwordInputRef.value.type = showPassword.value ? 'text' : 'password';
+//   }
+// }
+
+const validateFunc = () => {
+  const validator = new Validator();
+
+  if (usernameInputRef.value) {
+    validator.add(usernameInputRef.value, [{ strategy: 'isEmpty', errorMsg: '用户名不能为空' }]);
+  }
+
   if (passwordInputRef.value) {
-    passwordInputRef.value.type = showPassword.value ? 'text' : 'password';
+    validator.add(passwordInputRef.value, [{ strategy: 'isEmpty', errorMsg: '密码不能为空' }]);
   }
-}
-watch([username, password], () => {
-  if (username.value && password.value) {
-    validateLogin.value = true;
-  } else {
-    validateLogin.value = false;
+
+  return validator.start();
+};
+
+const loginStore = useLoginStore();
+
+async function onHandlerLogin() {
+  const validationError = validateFunc();
+
+  if (validationError) {
+    console.error(validationError);
+    return;
   }
-});
-function onHandlerLogin() {
-  console.log('login');
+
+  try {
+    await loginStore.GetUserInfo(username.value, password.value);
+  } catch (error) {
+    console.error('登录失败', error);
+  }
 }
 </script>
 <style scoped></style>

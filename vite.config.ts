@@ -28,7 +28,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         '/dev': {
           target: 'http://localhost:3000',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/dev/, ''),
+          rewrite: (value) => value.replace(/^\/dev/, ''),
         },
       },
     },
@@ -37,6 +37,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         '~@': path.join(__dirname, './src'),
         '@': path.join(__dirname, './src'),
         '~': path.join(__dirname, './src/assets'),
+        '#': path.join(__dirname, './types'),
       },
     },
 

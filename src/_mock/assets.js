@@ -101,3 +101,15 @@ export const TEST_LIST = [
     like: Number(faker.number.int({ min: 0, max: 1000 })),
   },
 ]
+
+
+export const USER_INFO = {
+  username: 'admin',
+  password: '123456',
+  name: faker.person.firstName(),
+  avatar: faker.image.avatar(),
+  email: faker.internet.email(),
+  phone: faker.phone.number(),
+  address: faker.location.streetAddress(),
+  token: '123456',
+}

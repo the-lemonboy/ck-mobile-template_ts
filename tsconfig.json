@@ -9,7 +9,8 @@
     "moduleResolution": "Bundler",
     "paths": {
       "@/*": ["src/*"],
-      "@iconify/*": ["node_modules/@iconify/*"]
+      "@iconify/*": ["node_modules/@iconify/*"],
+      "#/*": ["types/*"]
     },
     "types": [
       "node",
@@ -43,7 +44,8 @@
     "src",
     "**.ts", 
     "*.json", 
-    "**.*js"
+    "**.*js",
+    "types/**/*.ts",
   ],
   "exclude": ["node_modules", "dist",".eslintrc.cjs","postcss.config.js","commitlint.config.js","tailwind.config.js"],
 }

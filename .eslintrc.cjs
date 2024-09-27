@@ -14,7 +14,10 @@ module.exports = {
     // 识别 @ # alias
     'import/resolver': {
       alias: {
-        map: [['@', './src']],
+        map: [
+          ['@', './src'],
+          ['#', './types'],
+        ],
         extensions: ['.ts', '.js', '.json', '.vue'],
       },
     },
