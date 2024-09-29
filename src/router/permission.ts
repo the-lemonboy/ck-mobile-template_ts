@@ -14,6 +14,7 @@ router.beforeEach((to: EnhancedRouteLocation, from: any, next: any) => {
   NProgress.start();
   // console.log(store.get('token'));
   // if (!store.get('token')) {
+  console.log('No token found, redirecting to login.');
   console.log('Token found, continuing to route.');
   const routeCacheStore = useRouteCacheStore();
   const routeTransitionNameStore = useRouteTransitionNameStore();
