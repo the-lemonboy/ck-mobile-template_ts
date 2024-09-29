@@ -13,27 +13,25 @@ import type { EnhancedRouteLocation } from './types';
 router.beforeEach((to: EnhancedRouteLocation, from: any, next: any) => {
   NProgress.start();
   // console.log(store.get('token'));
-  // if (!store.get('token')) {
-  console.log('No token found, redirecting to login.');
-  console.log('Token found, continuing to route.');
-  const routeCacheStore = useRouteCacheStore();
-  const routeTransitionNameStore = useRouteTransitionNameStore();
+  if (!store.get('token')) {
+    const routeCacheStore = useRouteCacheStore();
+    const routeTransitionNameStore = useRouteTransitionNameStore();
 
-  // Route cache
-  routeCacheStore.addRoute(to);
+    // Route cache
+    routeCacheStore.addRoute(to);
 
-  if (to.meta.level > from.meta.level) {
-    routeTransitionNameStore.setName('slide-fadein-left');
-  } else if (to.meta.level < from.meta.level) {
-    routeTransitionNameStore.setName('slide-fadein-right');
+    if (to.meta.level > from.meta.level) {
+      routeTransitionNameStore.setName('slide-fadein-left');
+    } else if (to.meta.level < from.meta.level) {
+      routeTransitionNameStore.setName('slide-fadein-right');
+    } else {
+      routeTransitionNameStore.setName('');
+    }
+    next();
   } else {
-    routeTransitionNameStore.setName('');
+    console.log('No token found, redirecting to login.');
+    next({ name: 'login' });
   }
-  next();
-  // } else {
-  //   console.log('No token found, redirecting to login.');
-  //   next({ name: 'login' });
-  // }
 
   NProgress.done();
 });
