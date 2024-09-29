@@ -41,9 +41,9 @@ dependencies:
   resize-detector:
     specifier: ^0.3.0
     version: 0.3.0
-  store:
-    specifier: ^2.0.12
-    version: 2.0.12
+  storejs:
+    specifier: ^2.1.0
+    version: 2.1.0
   tailwindcss:
     specifier: ^3.4.8
     version: 3.4.10(ts-node@10.9.2)
@@ -9436,8 +9436,8 @@ packages:
     resolution: {integrity: sha512-JPbdCEQLj1w5GilpiHAx3qJvFndqybBysA3qUOnznweH4QbNYUsW/ea8QzSrnh0vNsezMMw5bcVool8lM0gwzg==}
     dev: true
 
-  /store@2.0.12:
-    resolution: {integrity: sha512-eO9xlzDpXLiMr9W1nQ3Nfp9EzZieIQc10zPPMP5jsVV7bLOziSFFBP0XoDXACEIFtdI+rIz0NwWVA/QVJ8zJtw==}
+  /storejs@2.1.0:
+    resolution: {integrity: sha512-0AZJCucZVGYGAEmkK44xf7rkUEhsPuocSHwTcAU3HEyGWl/VYRsc9FURznqxPWVdeIfCrleWalRcwskppxeDYA==}
     dev: false
 
   /strict-event-emitter@0.5.1:

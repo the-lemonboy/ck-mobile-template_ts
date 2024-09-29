@@ -1,3 +1,38 @@
+<template>
+  <Container>
+    <VanCellGroup inset>
+      <VanCell center :title="t('home.darkMode')">
+        <template #right-icon>
+          <VanSwitch
+            v-model="checked"
+            size="20px"
+            aria-label="on/off Dark Mode"
+            @click="toggle()"
+          />
+        </template>
+      </VanCell>
+      <VanCell
+        is-link
+        :title="t('home.language')"
+        :value="language"
+        @click="showLanguagePicker = true"
+      />
+      <!-- eslint-disable-next-line vue/no-v-model-argument -->
+      <van-popup v-model:show="showLanguagePicker" position="bottom">
+        <van-picker
+          v-model="languageValues"
+          :columns="languageColumns"
+          @confirm="onLanguageConfirm"
+          @cancel="showLanguagePicker = false"
+        />
+      </van-popup>
+
+      <span v-for="item in menuItems" :key="item.route">
+        <VanCell :title="item.title" :to="item.route" is-link />
+      </span>
+    </VanCellGroup>
+  </Container>
+</template>
 <script setup lang="ts">
 import useAppStore from '@/stores/modules/app';
 import { languageColumns, locale } from '@/utils/i18n';
@@ -49,39 +84,3 @@ const menuItems = computed(() => [
   { title: t('home.iconify'), route: 'iconify' },
 ]);
 </script>
-
-<template>
-  <Container>
-    <VanCellGroup inset>
-      <VanCell center :title="t('home.darkMode')">
-        <template #right-icon>
-          <VanSwitch
-            v-model="checked"
-            size="20px"
-            aria-label="on/off Dark Mode"
-            @click="toggle()"
-          />
-        </template>
-      </VanCell>
-      <VanCell
-        is-link
-        :title="t('home.language')"
-        :value="language"
-        @click="showLanguagePicker = true"
-      />
-      <!-- eslint-disable-next-line vue/no-v-model-argument -->
-      <van-popup v-model:show="showLanguagePicker" position="bottom">
-        <van-picker
-          v-model="languageValues"
-          :columns="languageColumns"
-          @confirm="onLanguageConfirm"
-          @cancel="showLanguagePicker = false"
-        />
-      </van-popup>
-
-      <span v-for="item in menuItems" :key="item.route">
-        <VanCell :title="item.title" :to="item.route" is-link />
-      </span>
-    </VanCellGroup>
-  </Container>
-</template>

@@ -17,6 +17,7 @@ module.exports = {
         map: [
           ['@', './src'],
           ['#', './types'],
+          ['msw/browser', './node_modules/msw/browser'],
         ],
         extensions: ['.ts', '.js', '.json', '.vue'],
       },

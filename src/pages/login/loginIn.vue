@@ -1,7 +1,7 @@
 <template>
   <!-- <Container> -->
-  <div>
-    <div class="mb-10 flex w-full justify-center">
+  <div class="">
+    <div class="mb-10 mt-10 flex w-full justify-center">
       <Icon icon="fa6-solid:lemon" class="h-20 w-20 text-yellow-400" />
     </div>
     <div class="flex w-full flex-col justify-center">
@@ -47,7 +47,7 @@
         </span>
       </div>
       <div class="flex justify-between">
-        <van-checkbox v-model="remenberPasswordValue">记住密码</van-checkbox>
+        <van-checkbox v-model="rememberPasswordValue">记住密码</van-checkbox>
         <span class="text-base text-blue-400">忘记密码?</span>
       </div>
       <div class="mt-10">
@@ -95,7 +95,7 @@ definePage({
 });
 
 const { t } = useI18n();
-// const rememberPasswordValue = ref(false);
+const rememberPasswordValue = ref(false);
 const ruleValue = ref(false);
 const showPassword = ref(false);
 const passwordInputRef = ref<HTMLInputElement | null>(null);
@@ -104,13 +104,12 @@ const username = ref('');
 const password = ref('');
 const validateLogin = computed(() => !!(username.value && password.value));
 
-// function togglePasswordVisibility(): void {
-//   showPassword.value = !showPassword.value;
-//   if (passwordInputRef.value) {
-//     passwordInputRef.value.type = showPassword.value ? 'text' : 'password';
-//   }
-// }
-
+const onHandlerShowPassword = () => {
+  showPassword.value = !showPassword.value;
+  if (passwordInputRef.value) {
+    passwordInputRef.value.type = showPassword.value ? 'text' : 'password';
+  }
+};
 const validateFunc = () => {
   const validator = new Validator();
 
