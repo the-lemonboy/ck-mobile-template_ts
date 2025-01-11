@@ -10,4 +10,4 @@
 * vant
 * tailwindcss
 
-#### 模版fork自 [https://github.com/easy-temps/vue3-vant-mobile]()
+#### 模版fork自 [https://github.com/easy-temps/vue3-vant-mobile]()，并基于部分技术栈和业务做改动。
