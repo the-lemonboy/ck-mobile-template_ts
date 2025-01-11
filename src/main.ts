@@ -4,8 +4,6 @@ import { createApp } from 'vue';
 import App from '@/App.vue';
 import router from '@/router';
 import pinia from '@/stores';
-import '@/router/permission';
-// import 'virtual:uno.css'
 import '@/styles/app.scss';
 import '@/styles/tailwindcss.css';
 import { i18n } from '@/utils/i18n';
