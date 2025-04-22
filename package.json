@@ -16,7 +16,12 @@
     "prepare": "husky",
     "lint-staged": "lint-staged"
   },
-
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --cache --fix",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@tanstack/vue-query": "^5.51.21",
     "@unhead/vue": "^1.9.16",
