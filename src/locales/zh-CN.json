@@ -30,7 +30,8 @@
   },
   "layouts": {
     "home": "首页",
-    "profile": "我的"
+    "profile": "我的",
+    "community": "社区"
   },
   "profile": {
     "placeholder": "未完成"

@@ -10,11 +10,13 @@ type ResData<T> = {
 };
 export enum UserApi {
   LoginUp = '/api/loginup',
+  community = '/api/community/mock',
 }
 
 const LoginIn = (data: LogininReq) =>
   APIClient.post<ResData<UserInfoRes>>({ url: UserApi.LoginUp, data });
-
+const GetCommunity = () => APIClient.get({ url: UserApi.community });
 export default {
   LoginIn,
+  GetCommunity
 };

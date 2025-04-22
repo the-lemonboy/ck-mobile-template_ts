@@ -37,6 +37,9 @@
       <div class="flex aspect-square w-full items-center justify-center bg-blue-200">
         <Icon icon="ic:baseline-alarm-on" class="h-1/2 w-1/2"></Icon>
       </div>
+      <div class="flex aspect-square w-full items-center justify-center bg-blue-200">
+        <Icon icon="mingcute:play-fill" class="h-1/2 w-1/2"></Icon>
+      </div>
     </div>
   </container>
 </template>

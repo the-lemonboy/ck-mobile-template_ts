@@ -30,7 +30,8 @@
   },
   "layouts": {
     "home": "HOME",
-    "profile": "PROFILE"
+    "profile": "PROFILE",
+    "community": "COMMUNITY"
   },
   "profile": {
     "placeholder": "WIP"

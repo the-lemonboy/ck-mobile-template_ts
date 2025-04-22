@@ -1,6 +1,8 @@
 import { http, HttpResponse } from "msw";
 import { USER_INFO } from "../assets";
 
+
+
 export const UserMockApi = [
   http.post('/api/loginup', async ({ request }) => {
     const { username, password } = await request.json();
@@ -21,4 +23,5 @@ export const UserMockApi = [
       });
     }
   }),
+
 ];

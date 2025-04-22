@@ -1,5 +1,5 @@
 import { defineMockData } from 'vite-plugin-mock-dev-server'
-
+import { faker } from '@faker-js/faker';
 // defineMockData，用于在 mock 文件中使用 data.ts 作为共享数据源。
 export default defineMockData('proses', [
   '🔖 躲在某一时间，想念一段时光的掌纹;躲在某一地点，想念一个站在来路也站在去路的，让我牵挂的人。',
@@ -17,4 +17,19 @@ export default defineMockData('proses', [
   '🔖 下午茶的芬香熏陶着房内的任何一个角落，午后的阳光透过窗帘的间隙洒在木制的桌面上，一份思念随着红茶顺滑至心中。',
   '🔖 这里再不是我们的校园，当我们就此离开我们的青葱岁月。',
   '🔖 很久找你，一直没有找到，微风吹过的时候，我深深的呼吸，才感觉到你也在陪伴着我呼吸。',
+])
+
+function generateMockData(count: number): WaterfallItem[] {
+  return Array.from({ length: count }, (_, index) => ({
+    id: items.value.length + index,
+    title: faker.lorem.words(3),
+    description: faker.lorem.sentence(),
+    image: faker.image.url(),
+    type: Math.random() > 0.7 ? 'video' : 'image',
+    videoUrl: Math.random() > 0.7 ? 'https://www.w3schools.com/html/mov_bbb.mp4' : undefined,
+  }));
+}
+ const items = defineMockData('items', generateMockData(10))
+export const community = defineMockData('community', [
+...items
 ])

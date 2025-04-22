@@ -1,5 +1,5 @@
 <template>
-  <Container pb-60>
+  <container pb-60>
     <div mx-auto pt-15 text-center text-16 text-dark dark:text-white>
       {{ t('profile.placeholder') }}
     </div>
@@ -8,7 +8,7 @@
         {{ t('login.title') }}
       </van-button>
     </div>
-  </Container>
+  </container>
 </template>
 <script setup lang="ts">
 definePage({
